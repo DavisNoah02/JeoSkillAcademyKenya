@@ -186,14 +186,14 @@ const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Everse Academy Kenya. All rights reserved.</p>
         <div className="flex gap-6">
           {[
-            { href: "#", icon: Facebook },
-            { href: "#", icon: Twitter },
-            { href: "#", icon: Instagram },
-            { href: "#", icon: Linkedin },
-            { href: "https://github.com/DavisNoah02", icon: Github },
-          ].map(({ href, icon: Icon }, idx) => (
-            <a key={idx} href={href} className="hover:text-white transition">
-              <Icon className="w-5 h-5" />
+            { href: "#", icon: Facebook, label: "Facebook" },
+            { href: "#", icon: Twitter, label: "Twitter" },
+            { href: "#", icon: Instagram, label: "Instagram" },
+            { href: "#", icon: Linkedin, label: "LinkedIn" },
+            { href: "https://github.com/DavisNoah02", icon: Github, label: "GitHub" },
+          ].map(({ href, icon: Icon, label }, idx) => (
+            <a key={idx} href={href} className="hover:text-white transition" title={label}>
+              <Icon className="w-5 h-5" aria-label={label} />
             </a>
           ))}
         </div>
