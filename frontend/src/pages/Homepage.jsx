@@ -7,7 +7,7 @@ import CoursesShowcaseSection from "@/components/sections/CoursesShowcaseSection
 import FAQsSection from "@/components/sections/FAQs_Section";
 import Footer from "@/components/layout/Footer";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <FloatingModeToggle />
