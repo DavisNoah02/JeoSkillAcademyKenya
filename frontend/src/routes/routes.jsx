@@ -9,7 +9,7 @@ const Terms = lazy(() => import("@/pages/TermsPage"));
 const Cookies = lazy(() => import("@/pages/CookiesPage"));
 const AboutUs = lazy(() => import("@/pages/AboutUsPage"));
 const ContactUs = lazy(() => import("@/pages/ContactUsPage"));
-const Home = lazy(() => import("@/pages/HomePage"));
+const Home = lazy(() => import("@/pages/Home"));
 
 const routes = [
   {path: "/",element: <Home /> },

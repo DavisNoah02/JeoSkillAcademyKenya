@@ -17,6 +17,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -35,10 +36,11 @@ const staggerContainer = {
 export default function AboutUs() {
   return (
     <>
+    <Navbar/>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         {/* Hero Section */}
         <motion.section
-          className="relative overflow-hidden py-20 px-6"
+          className="relative overflow-hidden py-8 px-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}

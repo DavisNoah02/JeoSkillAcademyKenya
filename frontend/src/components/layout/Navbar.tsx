@@ -8,13 +8,13 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: "Home", to: "/" },
-    { name: "About", to: "/about" },
+    { name: "About", to: "/AboutUs"},
     { name: "Courses", to: "/courses" },
     { name: "Contact Us", to: "/contact" },
   ];
 
   return (
-    <header className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-slate-800 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <Link to="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
           Everse Academy

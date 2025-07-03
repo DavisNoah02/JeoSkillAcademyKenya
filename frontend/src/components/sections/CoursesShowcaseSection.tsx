@@ -208,7 +208,7 @@ export default function CoursesSection() {
 
           <h2
             className={`text-3xl md:text-4xl font-bold mb-6 leading-tight ${
-              theme === "dark" ? "text-white" : "text-gray-900"
+              theme === "dark" ? "text-white" : "text-slate-600"
             }`}
           >
             Our{" "}
@@ -292,55 +292,81 @@ export default function CoursesSection() {
         </AnimatePresence>
 
         {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div
-            className={`relative rounded-3xl p-10 shadow-2xl max-w-4xl mx-auto border overflow-hidden group ${
-              theme === "dark"
-                ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-gray-700/50"
-                : "bg-gradient-to-br from-slate-900/90 to-slate-800/90 border-slate-700/50"
-            } backdrop-blur-xl`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 group-hover:from-purple-500/10 group-hover:via-blue-500/10 group-hover:to-indigo-500/10 transition-all duration-700" />
+        
+        {/* Bottom CTA */}
+<motion.div
+  className="text-center mt-20"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  viewport={{ once: true }}
+>
+  <div
+    className={`relative rounded-3xl p-10 shadow-2xl max-w-4xl mx-auto border overflow-hidden group transition-all duration-500 ${
+      theme === "dark"
+        ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700/60"
+        : "bg-gradient-to-br from-white to-slate-100 border-slate-200"
+    } backdrop-blur-xl`}
+  >
+    {/* Inner Glow/Effect Layer */}
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 group-hover:from-purple-500/10 group-hover:via-blue-500/10 group-hover:to-indigo-500/10 transition-all duration-700 pointer-events-none" />
 
-            <div className="relative">
-              <div className="flex items-center justify-center mb-3">
-                <Award className="w-8 h-6 text-purple-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white">
-                  Ready to Level Up Your{" "}
-                  <span className="bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text bg-red-500 text-blue-500">
-                    Tech Career?
-                  </span>
-                </h3>
-              </div>
-              <p className="text-slate-300 mb-8 text-lg leading-relaxed max-w-xl mx-auto">
-                Join thousands of students who've transformed their careers with our comprehensive courses. Start with
-                free courses or dive deep with premium content.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <motion.button
-                  className="text-white px-6 py-4 rounded-2xl font-semibold shadow-lg shadow-gray-500/25 hover:shadow-gray-500/40 transition-all duration-500 border border-gray-400/20 bg-gradient-to-r from-green-700 to-emerald-800 hover:cursor-pointer"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Start with Free Courses
-                </motion.button>
-                <motion.button
-                  className="text-white px-8 py-4 rounded-2xl font-semibold shadow-lg shadow-gray-500/25 hover:shadow-gray-500/40 transition-all duration-500 border border-gray-400/20 bg-gradient-to-r from-blue-700 to-emerald-800 hover:cursor-pointer"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Explore More Courses
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+    {/* Content */}
+    <div className="relative z-10">
+      <div className="flex items-center justify-center mb-3">
+        <Award
+          className={`w-8 h-6 ${
+            theme === "dark" ? "text-purple-400" : "text-purple-600"
+          } mr-4`}
+        />
+        <h3
+          className={`text-2xl font-bold ${
+            theme === "dark" ? "text-white" : "text-slate-800"
+          }`}
+        >
+          Ready to Level Up Your{" "}
+          <span
+            className={`bg-clip-text text-transparent ${
+              theme === "dark"
+                ? "bg-gradient-to-r from-slate-300 to-gray-100"
+                : "bg-gradient-to-r from-blue-600 to-emerald-500"
+            }`}
+          >
+            Tech Career?
+          </span>
+        </h3>
+      </div>
+
+      <p
+        className={`mb-8 text-lg leading-relaxed max-w-xl mx-auto ${
+          theme === "dark" ? "text-slate-300" : "text-slate-600"
+        }`}
+      >
+        Join thousands of students who've transformed their careers with our
+        comprehensive courses. Start with free courses or dive deep with premium
+        content.
+      </p>
+
+      <div className="flex flex-col sm:flex-row justify-center gap-12">
+        <motion.button
+          className="text-white px-6 py-4 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-500 border border-transparent bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-green-700 hover:to-emerald-800 hover:cursor-pointer"
+          whileHover={{ scale: 1.03, y: 0.3 }}
+          whileTap={{ scale: 0.55 }}
+        >
+          Start with Free Courses
+        </motion.button>
+        <motion.button
+          className="text-white px-8 py-4 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all duration-500 border border-transparent bg-gradient-to-r from-blue-900 to-emerald-900 hover:from-blue-700 hover:to-emerald-800 hover:cursor-pointer"
+          whileHover={{ scale: 1.03, y: 0.3 }}
+          whileTap={{ scale: 0.55 }}
+        >
+          Explore More Courses
+        </motion.button>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   )

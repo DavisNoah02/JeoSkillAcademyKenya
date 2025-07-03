@@ -2,7 +2,7 @@ import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/themeProvider";
 
-export function ModeToggle() {
+export  function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
@@ -14,7 +14,7 @@ export function ModeToggle() {
       variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="relative"
+      className="relative "
     >
       <Sun
         className={`h-[1.2rem] w-[1.2rem] transition-all ${
