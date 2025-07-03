@@ -7,16 +7,16 @@ import CoursesShowcaseSection from "@/components/sections/CoursesShowcaseSection
 import FAQsSection from "@/components/sections/FAQs_Section";
 import Footer from "@/components/layout/Footer";
 
-const HomePage = () => (
-  <>
-    <FloatingModeToggle />
-    <HeroLaunchSection />
-    <JoinBetaSection />
-    <WhyPlatformSection />
-    <CoursesShowcaseSection />
-    <FAQsSection />
-    <Footer />
+export default function HomePage() {
+  return (
+    <>
+      <FloatingModeToggle />
+      <HeroLaunchSection />
+      <JoinBetaSection />
+      <WhyPlatformSection />
+      <CoursesShowcaseSection />
+      <FAQsSection />
+      <Footer />
   </>
 );
-
-export default HomePage;
+}

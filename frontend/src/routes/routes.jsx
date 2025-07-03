@@ -1,4 +1,7 @@
 import React, { lazy } from "react";
+import NotFound from "@/pages/NotFoundPage";
+// import Navbar from "@/components/layout/Navbar.tsx";
+
 
 
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPage"));
