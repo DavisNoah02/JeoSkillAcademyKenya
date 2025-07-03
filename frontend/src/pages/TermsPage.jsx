@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, FileText, Scale, AlertTriangle, CreditCard, Users, Shield } from "lucide-react"
 import { Link } from "react-router-dom"
+// import Footer from "@/components/layout/Footer"
 
 export default function Terms() {
   const fadeInUp = {
@@ -88,6 +89,7 @@ export default function Terms() {
   ]
 
   return (
+    <> 
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Navigation */}
       <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
@@ -293,5 +295,7 @@ export default function Terms() {
         </div>
       </section>
     </div>
+    {/* <Footer/> */}
+    </>
   )
 }

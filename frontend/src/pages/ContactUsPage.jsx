@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Mail, Phone, MapPin, Clock, CheckCircle, Loader2, Send } from "lucide-react"
 
+import Footer from "@/components/layout/Footer";
+
 /**
  * @typedef {Object} FormData
  * @property {string} name
@@ -101,6 +103,7 @@ const ContactUsPage = () => {
 
   if (submitted) {
     return (
+      
       <div className="min-h-screen bg-gradient-to-br from-blue-900/30 to-emerald-900/30 backdrop-blur-sm py-12 px-4">
         <div className="max-w-2xl mx-auto">
           <Card className="text-center">
@@ -123,10 +126,11 @@ const ContactUsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-700/30 to-emerald-800/30 backdrop-blur-sm py-12 px-4">
+    <> 
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-green-800 mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Have questions or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as
             possible.
@@ -136,7 +140,7 @@ const ContactUsPage = () => {
         <div className="grid lg:grid-cols-3 gap-8 bg-gray shadow-lg">
           {/* Contact Form */}
           <div className="lg:col-span-2  ">
-            <Card className="bg-gray shadow-lg">
+            <Card className="bg-gray shadow-lg  bg-gray-50 dark:bg-gray-800">
               <CardHeader>
                 <CardTitle className="font-bold ">Send us a Message</CardTitle>
                 <CardDescription>Fill out the form below and we'll get back to you soon.</CardDescription>
@@ -224,8 +228,8 @@ const ContactUsPage = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="bg-gray shadow-lg">
+          <div className="space-y-6 ">
+            <Card className="bg-gray shadow-lg  bg-gray-50 dark:bg-gray-800">
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
                 <CardDescription>Reach out to us through any of these channels</CardDescription>
@@ -291,6 +295,8 @@ const ContactUsPage = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 "use client"
-import { motion } from "framer-motion"
+
 import {
   Award,
   Users,
@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Footer from "@/components/layout/Footer";
