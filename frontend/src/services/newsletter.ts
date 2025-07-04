@@ -55,7 +55,7 @@ export const subscribeToNewsletter = async (email: string): Promise<NewsletterRe
 
     return {
       success: true,
-      message: "✅ Thanks for subscribing! We'll keep you updated with the latest news and updates."
+      message: "✅ You are in, thanks for Subscribing We will keep you updated with the latest updates."
     };
   } catch (error) {
     console.error("Subscription failed:", error);
