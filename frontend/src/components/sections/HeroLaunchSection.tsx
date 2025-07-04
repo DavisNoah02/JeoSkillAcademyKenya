@@ -6,6 +6,7 @@ import CountdownTimer from "../shared/CountdownTimer";
 import Grid3D from "../shared/3DGrid";
 import { useTheme } from "@/components/themeProvider";
 import LaunchingSoon from "../shared/LaunchingSoon";
+import AnimatedParticles from "../shared/AnimatedParticles";
 
 function FeatureHighlights() {
   const features = [
@@ -45,19 +46,22 @@ export default function HeroLaunchSection() {
 
   return (
     <section
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden py-12 px-4 md:px-8 ${
-        theme === "dark" ? "bg-gray-950 text-white" : "bg-white text-gray-900"
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden py-16 px-6 md:px-8 ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-900"
       }`}
     >
       {/* Gradient Overlay */}
       <motion.div
         className={`absolute inset-0 z-0 ${
           theme === "dark"
-            ? "bg-gradient-to-br from-purple-900/30 via-slate-900/50 to-pink-900/30"
+            ? "bg-gradient-to-br from-purple-900/30 via-slate-900/50 to-blue-900/30"
             : "bg-gradient-to-br from-blue-100 via-white to-green-100"
         }`}
         style={{ y: y1 }}
       />
+
+      {/* Animated Particles (background, above gradient, below grid/content) */}
+      <AnimatedParticles />
 
       {/* 3D Background Grid */}
       <Grid3D />
@@ -89,7 +93,7 @@ export default function HeroLaunchSection() {
         >
           Learn. Grow.
           <br />
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 dark:from-blue-300 dark:to-green-300">
+          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-orange-800 to-blue-300 dark:from-blue-300 dark:to-teal-300">
             Dominate.
           </span>
         </motion.h1>
@@ -123,20 +127,20 @@ export default function HeroLaunchSection() {
         </div>
 
         {/* Countdown */}
-        <motion.div className="mb-12 mt-16 flex justify-center">
-          <div
-            className={`
-              inline-flex items-center gap-4 px-8 py-6 rounded-2xl shadow-xl border
-              backdrop-blur-md
-              ${theme === "dark"
-                ? "bg-white/10 border-white/20 text-white"
-                : "bg-white/80 border-gray-200 text-gray-900"}
-            `}
-          >
-            <CountdownTimer />
-          </div>
-        </motion.div>
-
+      <motion.div className="mb-12 mt-16 flex justify-center px-4">
+  <div
+    className={`
+      w-full max-w-4xl
+      inline-flex items-center gap-4 px-8 py-6 rounded-2xl shadow-xl border
+      backdrop-blur-md
+      ${theme === "dark"
+        ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700"
+        : "bg-gradient-to-br from-gray-500 to-slate-700 border-green-500"}
+    `}
+  >
+    <CountdownTimer />
+  </div>
+</motion.div>
 
 
         {/* Profile Stack */}
@@ -144,8 +148,6 @@ export default function HeroLaunchSection() {
           <ProfileStack />
         </div>
       </motion.div>
-
-      
     </section>
   );
 }

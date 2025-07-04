@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Mail, Phone, MapPin, Clock, CheckCircle, Loader2, Send } from "lucide-react"
 
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 /**
  * @typedef {Object} FormData
@@ -103,7 +104,7 @@ const ContactUsPage = () => {
 
   if (submitted) {
     return (
-      
+   
       <div className="min-h-screen bg-gradient-to-br from-blue-900/30 to-emerald-900/30 backdrop-blur-sm py-12 px-4">
         <div className="max-w-2xl mx-auto">
           <Card className="text-center">
@@ -127,7 +128,8 @@ const ContactUsPage = () => {
 
   return (
     <> 
-    <div className="min-h-screen bg-white dark:bg-gray-900 py-12 px-4">
+    <Navbar/>
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-18 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h1>
@@ -295,7 +297,9 @@ const ContactUsPage = () => {
         </div>
       </div>
     </div>
+
     <Footer />
+    
     </>
   )
 }

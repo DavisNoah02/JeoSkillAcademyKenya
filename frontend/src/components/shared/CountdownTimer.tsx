@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "@/components/themeProvider"; // your existing theme hook
 
 interface TimeLeft {
   days: number;
@@ -8,60 +9,57 @@ interface TimeLeft {
   seconds: number;
 }
 
+const LAUNCH_DURATION_DAYS = 70;
+
 export default function CountdownTimer() {
+  const { theme } = useTheme();
+
+  const launchStartDate = new Date("2025-07-01T00:00:00Z"); // Hardcoded start date
+  const launchEndDate = new Date(launchStartDate);
+  launchEndDate.setDate(launchEndDate.getDate() + LAUNCH_DURATION_DAYS);
+
+  const totalDurationMs = launchEndDate.getTime() - launchStartDate.getTime();
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
-  const [progress, setProgress] = useState(0); // Progress percentage (days passed)
+
+  const [progress, setProgress] = useState(0); // 0–100%
 
   useEffect(() => {
-    // Check if a launch date already exists in local storage
-    let launchDate = localStorage.getItem("launchDate");
-
-    if (!launchDate) {
-      // If no launch date exists, set it to 60 days from now and save it in local storage
-      const newLaunchDate = new Date();
-      newLaunchDate.setDate(newLaunchDate.getDate() + 60);
-      launchDate = newLaunchDate.toISOString();
-      localStorage.setItem("launchDate", launchDate);
-    }
-
-    const totalDuration = new Date(launchDate).getTime() - new Date().getTime(); // Total countdown duration in milliseconds
-
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = new Date(launchDate).getTime() - now;
+      const remaining = launchEndDate.getTime() - now;
+      const elapsed = now - launchStartDate.getTime();
 
-      // Calculate time left
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Clamp progress
+      const progressPercent = Math.min((elapsed / totalDurationMs) * 100, 100);
+      setProgress(progressPercent);
 
-      setTimeLeft({ days, hours, minutes, seconds });
-
-      // Calculate progress percentage (days passed)
-      const elapsedPercentage = Math.min(((totalDuration - distance) / totalDuration) * 100, 100); // Ensure it doesn't exceed 100%
-      setProgress(elapsedPercentage);
-
-      // Stop the timer if the countdown is complete
-      if (distance < 0) {
+      if (remaining <= 0) {
         clearInterval(timer);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        setProgress(100); // Set progress to 100% when countdown ends
+        return;
       }
+
+      const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+      setTimeLeft({ days, hours, minutes, seconds });
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-6">
-      {/* Countdown Timer */}
-      <div className="flex gap-4 justify-center">
+    <div className="flex flex-col items-center gap-6 w-full">
+      {/* Timer Units */}
+      <div className="flex flex-wrap gap-4 justify-center">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <motion.div
             key={unit}
@@ -70,23 +68,43 @@ export default function CountdownTimer() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
-              <div className="text-3xl font-bold text-white">{value.toString().padStart(2, "0")}</div>
-              <div className="text-sm text-gray-300 capitalize">{unit}</div>
+            <div
+              className={`rounded-lg p-4 min-w-[80px] ${
+                theme === "dark"
+                  ? "bg-white/10 text-white"
+                  : "bg-gray-100 text-gray-800"
+              }`}
+            >
+              <div className="text-3xl font-bold">
+                {value.toString().padStart(2, "0")}
+              </div>
+              <div
+                className={`text-sm capitalize ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-600"
+                }`}
+              >
+                {unit}
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full max-w-lg bg-gray-700 rounded-full h-2 overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500"
-          style={{ width: `${progress}%` }} // Dynamic width based on days passed
-          initial={{ width: "0%" }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 1, ease: "linear" }}
-        />
+      <div className="w-full max-w-lg h-2 rounded-full overflow-hidden">
+        <div
+          className={`h-full ${
+            theme === "dark" ? "bg-gray-700" : "bg-gray-300"
+          }`}
+        >
+          <motion.div
+            className="h-full bg-gradient-to-r from-red-500 via-blue-500 to-green-500"
+            style={{ width: `${progress}%` }}
+            initial={{ width: "0%" }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 1, ease: "linear" }}
+          />
+        </div>
       </div>
     </div>
   );

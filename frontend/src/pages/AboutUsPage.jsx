@@ -40,7 +40,7 @@ export default function AboutUs() {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         {/* Hero Section */}
         <motion.section
-          className="relative overflow-hidden py-8 px-6"
+          className="relative overflow-hidden py-18 px-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -53,10 +53,10 @@ export default function AboutUs() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Sparkles className="w-4 h-4" />
-                Transforming Education in Africa
+                Tech Build in KENYA
               </motion.div>
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent mb-6">
-                E-verse Academy
+                E-verse Skool
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
                 Empowering Africa's next generation of digital innovators through world-class, accessible online education

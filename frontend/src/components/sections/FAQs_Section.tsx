@@ -87,37 +87,39 @@ export default function FAQsSection() {
           />
         </div>
 
+       
         {/* FAQ Items */}
-        <div className="space-y-4 max-w-3xl mx-auto mb-12">
-          {filteredFaqs.length > 0 ? (
-            filteredFaqs.map((faq, index) => (
-              <details
-                key={index}
-                className="bg-slate-100 dark:bg-slate-700 rounded-lg shadow-lg p-4 group"
-              >
-                <summary className="flex justify-between items-center cursor-pointer text-lg font-medium text-purple-700 dark:text-purple-300 group-hover:text-purple-500 dark:group-hover:text-purple-400">
-                  {faq.question}
-                  <span className="text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-500">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-2 text-gray-700 dark:text-slate-300">
-                  {faq.answer}
-                </p>
-              </details>
-            ))
-          ) : (
-            <p className="text-center text-gray-600 dark:text-slate-400">
-              No FAQs match your search query.
-            </p>
-          )}
-        </div>
+              <div className="space-y-4 max-w-3xl mx-auto mb-12">
+                {filteredFaqs.length > 0 ? (
+                  filteredFaqs.map((faq, index) => (
+                    <details
+                      key={index}
+                      className="group rounded-lg shadow-lg p-4 transition-all duration-300 bg-slate-100 dark:bg-slate-800"
+                    >
+                      <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400">
+                        {faq.question}
+                        <span className="text-teal-600 dark:text-purple-400 group-hover:text-teal-500 dark:group-hover:text-purple-300 text-xl font-bold">
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))
+                ) : (
+                  <p className="text-center text-gray-600 dark:text-slate-400">
+                    No FAQs match your search query.
+                  </p>
+                )}
+              </div>
+
 
         {/* Newsletter Section */}
-        <div className="max-w-5xl mx-auto flex flex-col gap-6 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-700 text-white rounded-2xl p-6 shadow-lg">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-700 text-white rounded-2xl p-6 shadow-lg">
           <div className="text-center">
             <h2 className="text-2xl font-semibold mb-2">
-              Get notified! Stay Updated
+              JOIN THE NEWSLETTER
             </h2>
             <p className="text-sm text-slate-200">
               Subscribe to our newsletter and never miss important updates,
@@ -178,7 +180,7 @@ export default function FAQsSection() {
           )}
 
           <p className="text-center text-sm text-slate-300">
-            You can{" "}
+            No spam, just occasional updates. You can{" "}
             <a href="/newsletter" className="text-blue-400 underline">
               unsubscribe
             </a>{" "}
