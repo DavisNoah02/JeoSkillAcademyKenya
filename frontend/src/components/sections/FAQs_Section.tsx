@@ -67,13 +67,14 @@ export default function FAQsSection() {
     >
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-center mb-6">
-          <HelpCircle size={40} className="text-green-400 mr-4" />
-          <h2 className="text-3xl font-bold text-center">
-            Frequently Asked Questions
-          </h2>
+          
+         <h2 className="text-3xl font-bold text-center">
+          Frequently Asked Questions
+        </h2>
+        <HelpCircle size={40} className="text-green-400 ml-4" />
         </div>
         <p className="text-center text-slate-500 dark:text-slate-300 mb-6">
-          Find quick answers to common questions about Everse Academy.
+          Find quick answers to common questions about Jeo Skill Academy.
         </p>
 
         {/* Search Input */}

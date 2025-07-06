@@ -31,12 +31,12 @@ export default function JoinBetaSection() {
           viewport={{ once: true }}
         >
           <div className={`inline-flex items-center space-x-2 px-4 py-2 mb-4 rounded-full ${isDark ? "bg-purple-700/10" : "bg-purple-100"}`}>
-            <Star className="w-5 h-5 text-purple-600" />
+            {/* <Star className="w-5 h-5 text-purple-600" /> */}
             <span className="text-sm font-medium text-purple-600">Limited Beta Access</span>
           </div>
 
           <h2 className={`text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 ${isDark ? "text-white" : "text-slate-900"}`}>
-            <Rocket className="w-7 h-7 text-purple-500" />
+            {/* <Rocket className="w-7 h-7 text-purple-500" /> */}
             Join Our <span className="bg-gradient-to-r from-blue-500 to-emerald-500 text-transparent bg-clip-text">Beta Program</span>
           </h2>
 

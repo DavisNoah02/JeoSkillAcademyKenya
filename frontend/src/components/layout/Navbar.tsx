@@ -30,13 +30,13 @@ const Navbar: React.FC = () => {
           : "bg-white/50 text-gray-900 border-gray-200"}
       `}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
           to="/"
           className="text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent"
         >
-          Everse Skool
+          JeoSkill
         </Link>
 
         {/* Nav Links (Desktop) */}

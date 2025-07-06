@@ -37,7 +37,7 @@ export default function AboutUs() {
   return (
     <>
     <Navbar/>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pt-16">
         {/* Hero Section */}
         <motion.section
           className="relative overflow-hidden py-18 px-6"
@@ -48,15 +48,9 @@ export default function AboutUs() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-emerald-600/10 dark:from-blue-400/5 dark:to-emerald-400/5" />
           <div className="container mx-auto max-w-6xl relative z-10">
             <motion.div className="text-center mb-16" variants={fadeInUp} initial="initial" animate="animate">
-              <motion.div
-                className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Sparkles className="w-4 h-4" />
-                Tech Build in KENYA
-              </motion.div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent mb-6">
-                E-verse Skool
+              
+              <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent mb-6">
+                Who are We ?
               </h1>
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
                 Empowering Africa's next generation of digital innovators through world-class, accessible online education
@@ -72,9 +66,9 @@ export default function AboutUs() {
             >
               {[
                 { number: "100+", label: "Active Learners", icon: Users, color: "blue" },
-                { number: "50+", label: "Success Stories", icon: Globe, color: "green" },
+                { number: "20+", label: "Success Stories", icon: Globe, color: "green" },
                 { number: "10+", label: "Expert Instructors", icon: Award, color: "purple" },
-                { number: "110+", label: "Courses Available", icon: BookOpen, color: "orange" },
+                { number: "80+", label: "Courses Available", icon: BookOpen, color: "orange" },
               ].map((stat, index) => (
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="text-center p-6 border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
@@ -122,7 +116,7 @@ export default function AboutUs() {
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Our Mission</h3>
                     </div>
-                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed">
+                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed text">
                       To democratize access to world-class tech and professional education by building an inclusive and
                       engaging digital learning ecosystem tailored for African learners.
                     </p>
@@ -161,7 +155,7 @@ export default function AboutUs() {
               <div>
                 <h2 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-6">Our Story</h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                  Founded by Kenyan educators, developers, and community builders, E-verse Academy was born out of the
+                  Founded by Noah Dave and his team, a team of Kenyan educators, developers, and community builders, JeoSkill Academy was born out of the
                   need to close Africa's digital skills gap. Our team is committed to delivering hands-on, locally
                   relevant, and globally recognized online education.
                 </p>
@@ -271,7 +265,7 @@ export default function AboutUs() {
               {[
                 {
                   quote:
-                    "I enrolled in E-verse's Frontend Bootcamp and within 6 months, I was freelancing and supporting my family. The mentorship made all the difference.",
+                    "I enrolled in JeoSkill Frontend Bootcamp and within 6 months, I was freelancing and supporting my family. The mentorship made all the difference.",
                   author: "Faith Wanjiku",
                   location: "Nairobi, Kenya",
                   role: "Frontend Developer",

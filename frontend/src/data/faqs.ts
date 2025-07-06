@@ -1,5 +1,10 @@
 export const faqs = [
 	{
+		question: "What is Jeo Skill Academy?",
+		answer:
+			"Our Jeo Skill Academy Kenya platform is designed from the ground up to help you learn faster and smarter. Expect features like gamified progress tracking, AI-powered learning suggestions, peer collaboration tools, and offline access. It’s more than just video lessons—it's an ecosystem built to elevate your skills.",
+	},
+	{
 		question: "How much will courses cost?",
 		answer:
 			"Our courses will be affordably priced, with flexible payment options including one-time payments, subscriptions, and occasional discounts. We’re committed to making high-quality education accessible to everyone.",
@@ -15,15 +20,11 @@ export const faqs = [
 			"Absolutely. Once you complete a course and pass all required assessments, you’ll receive a verifiable digital certificate that you can share on LinkedIn or include in your portfolio.",
 	},
 	{
-		question: "How can I become a beta tester?",
-		answer:
-			"Just sign up on our website and opt in for beta testing. As a beta tester, you’ll get early access to our courses, exclusive feedback opportunities, and perks when we launch officially.",
+	question: "How can I become a beta tester?",
+	answer:
+		"To become a beta tester, simply click the 'Apply' button in the Join Beta section of our website👆. As a beta tester, you'll receive early access to our courses, the chance to provide valuable feedback, and enjoy exclusive perks when we officially launch. We welcome passionate learners who want to help shape the future of Everse Skool!",
 	},
-	{
-		question: "What is Everse Academy Kenya  Platform all about?",
-		answer:
-			"Our Everse Academy Kenya LMS is designed from the ground up to help you learn faster and smarter. Expect features like gamified progress tracking, AI-powered learning suggestions, peer collaboration tools, and offline access. It’s more than just video lessons—it's an ecosystem built to elevate your skills.",
-	},
+	
 	{
 		question: "Can I access the courses on mobile?",
 		answer:
