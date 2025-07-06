@@ -290,8 +290,6 @@ export default function CoursesSection() {
             </div>
           </motion.div>
         </AnimatePresence>
-
-        {/* Bottom CTA */}
         
         {/* Bottom CTA */}
 <motion.div
@@ -342,7 +340,7 @@ export default function CoursesSection() {
           theme === "dark" ? "text-slate-300" : "text-slate-600"
         }`}
       >
-        Join thousands of students who've transformed their careers with our
+        Join thousands of students who will transform their careers with our
         comprehensive courses. Start with free courses or dive deep with premium
         content.
       </p>

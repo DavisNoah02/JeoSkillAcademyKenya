@@ -132,7 +132,7 @@ const ContactUsPage = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900 py-18 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold   mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent pt-10">Get in Touch</h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Have questions or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as
             possible.
@@ -241,7 +241,7 @@ const ContactUsPage = () => {
                   <Mail className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-gray-400">info@everseacademykenya.com</p>
+                    <p className="text-sm text-gray-400">info@jeoskill.com</p>
                   </div>
                 </div>
 

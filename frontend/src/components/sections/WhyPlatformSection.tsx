@@ -10,7 +10,7 @@ import {
   CheckCircle
 } from "lucide-react"
 import { useTheme } from "@/components/themeProvider"
-import { problems, learningPath } from "@/data/whySkillKenyaData"
+import { problems, learningPath } from "@/data/whyJeoSkillData"
 
 const successMetrics = [
   { label: "Structured Curriculum", icon: BookOpen },
@@ -43,10 +43,10 @@ export default function WhySkillKenya() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center space-x-2 bg-blue-800/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
+          {/* <div className="inline-flex items-center space-x-2 bg-blue-800/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
             <Sparkles className={`w-5 h-5 ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`} /> 
             <span className={`text-sm font-medium ${theme === "dark" ? "text-blue-400" : "text-blue-700"}`}>Your Learning Journey</span>
-          </div>
+          </div> */}
 
           <h2
             className={`text-3xl md:text-4xl font-bold mb-6 leading-tight ${
@@ -55,7 +55,7 @@ export default function WhySkillKenya() {
           >
             Why Choose{" "}
             <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              E-verse Academy?
+              JeoSkill Academy?
             </span>
           </h2>
 
@@ -142,7 +142,7 @@ export default function WhySkillKenya() {
                       : "bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent"
                   }`}
                 >
-                  Learning With E-verse Academy
+                  Learning With Jeo-Skill Academy
                 </h3>
               </div>
 

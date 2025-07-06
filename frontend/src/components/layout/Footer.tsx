@@ -66,8 +66,8 @@ const Footer = () => {
       >
         {/* Company Info */}
         <div className="space-y-4">
-          <h2 className="text-3xl text-left font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">
-            Everse Academy Kenya
+          <h2 className="text-2xl text-left font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">
+             JEO SKILL Kenya
           </h2>
           <p className="text-left text-md gap-3 text-slate-300">
             Bridging the gap in digital skills through world-class training for future-ready Kenyans.
@@ -80,7 +80,7 @@ const Footer = () => {
               className="flex items-center gap-2 text-slate-400 hover:text-white transition"
             >
               <Mail className="text-blue-400 w-5 h-5" />
-              <span>everse@gmail.com</span>
+              <span>jeoskill@gmail.com</span>
             </a>
             <a
               href="tel:+254729239023"
@@ -112,7 +112,7 @@ const Footer = () => {
 
         {/* Support */}
         <div className="space-y-4 lg:text-left md:text-center text-center">
-          <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">Support</h4>
+          <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">Get Help</h4>
           <ul className="space-y-2 text-slate-300">
             {["Contact Us", "Privacy Policy", "Cookies Policy", "Terms of Service"].map((item) => (
               <li key={item}>
@@ -183,7 +183,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="relative z-10 max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; {new Date().getFullYear()} Everse Academy Kenya. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} JeoSkill Academy. All rights reserved.</p>
         <div className="flex gap-6">
           {[
             { href: "#", icon: Facebook, label: "Facebook" },
