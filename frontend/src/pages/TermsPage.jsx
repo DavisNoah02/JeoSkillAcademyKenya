@@ -28,7 +28,7 @@ export default function Terms() {
         },
         {
           subtitle: "Age Requirements",
-          text: "You must be at least 16 years old to use our Service. If you are under 18, you represent that you have your parent's or guardian's permission to use the Service.",
+          text: "You must be at least 13 years old to use our Service. If you are under 13, you represent that you have your parent's or guardian's permission to use the Service.",
         },
       ],
     },
@@ -129,8 +129,8 @@ export default function Terms() {
             <Card className="p-8 dark:bg-gray-800 dark:border-gray-700">
               <CardContent>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  These Terms of Service ("Terms") govern your use of the E-verse Academy Learning Management System and
-                  related services (collectively, the "Service") operated by Skill Kenya ("we," "our," or "us").
+                  These Terms of Service govern your use of the JEOSKILL Learning Management System and
+                  related services (collectively, the "Service") operated by JEOSKILL.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
                   By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part
@@ -279,10 +279,10 @@ export default function Terms() {
                   </p>
                   <div className="space-y-2 text-gray-700 dark:text-gray-300">
                     <p>
-                      <strong>Email:</strong> everse@gmail.com
+                      <strong>Email:</strong> JeoSkill@gmail.com
                     </p>
                     <p>
-                      <strong>Phone:</strong> +254 700 000 000
+                      <strong>Phone:</strong> +254 729239023
                     </p>
                     <p>
                       <strong>Address:</strong> Nairobi, Kenya

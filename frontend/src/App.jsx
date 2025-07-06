@@ -38,7 +38,7 @@ function App() {
                   </svg>
                 </div>
                 <div className="text-lg font-semibold text-slate-700 dark:text-slate-200 tracking-wide">
-                  Loading J.E.O-Skill Academy...
+                  Loading JEO Skill Academy...
                 </div>
                 <div className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Preparing your learning experience

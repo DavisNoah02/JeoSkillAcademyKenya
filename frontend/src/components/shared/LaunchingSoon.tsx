@@ -14,7 +14,7 @@ export default function LaunchingSoon() {
       >
         {/* Outer pulse ring */}
         <motion.div
-          className="absolute inset-0 rounded-full border border-green-400/30"
+          className="absolute inset-0 rounded-full border border-red-500"
           animate={{
             scale: [1, 1.15, 1],
             
@@ -27,7 +27,7 @@ export default function LaunchingSoon() {
         />
 
         {/* Button */}
-        <div className="relative bg-gradient-to-r from-teal-800 via-gray-600 to-gray-800 border  rounded-full px-10 py-5 shadow-lg">
+        <div className="relative bg-gradient-to-r from-teal-800 via-gray-600 to-gray-800 border  rounded-full border-red-300/30 px-10 py-5 shadow-lg">
           <div className="flex items-center space-x-4 text-white">
             <motion.div
               animate={{ rotate: 360 }}
