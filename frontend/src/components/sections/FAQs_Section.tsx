@@ -117,7 +117,7 @@ export default function FAQsSection() {
 
 
         {/* Newsletter Section */}
-        <div className="max-w-4xl mx-auto flex flex-col gap-6 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-700 text-white rounded-2xl p-6 shadow-lg">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-700 text-white  p-6 shadow-lg">
           <div className="text-center">
             <h2 className="text-2xl font-semibold mb-2">
               JOIN THE NEWSLETTER

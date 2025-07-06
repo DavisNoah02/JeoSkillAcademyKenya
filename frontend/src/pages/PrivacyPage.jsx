@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
             <Card className="p-8 dark:bg-gray-800 dark:border-gray-700">
               <CardContent>
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  At E-verse Academy , we are committed to protecting your privacy and ensuring
+                  At JeoSkill Academy , we are committed to protecting your privacy and ensuring
                   the security of your personal information. This Privacy Policy explains how we collect, use, disclose,
                   and safeguard your information when you use our Learning Management System and related services
                   (collectively, the "Service").
@@ -269,10 +269,10 @@ export default function PrivacyPolicy() {
                   </p>
                   <div className="space-y-2 text-gray-700 dark:text-gray-300">
                     <p>
-                      <strong>Email:</strong> everse@gmail.com
+                      <strong>Email:</strong> JeoSkill@gmail.com
                     </p>
                     <p>
-                      <strong>Phone:</strong> +254 700 000 000
+                      <strong>Phone:</strong> +254 729239023
                     </p>
                     <p>
                       <strong>Address:</strong> Nairobi, Kenya

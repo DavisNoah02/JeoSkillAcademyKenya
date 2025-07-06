@@ -124,7 +124,7 @@ export default function JoinBetaSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className={`relative max-w-4xl mx-auto rounded-3xl p-10 shadow-2xl overflow-hidden group transition-all duration-500 border ${
+          <div className={`relative max-w-4xl mx-auto rounded-xl p-10 shadow-2xl overflow-hidden group transition-all duration-500 border ${
             isDark
               ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700"
               : "bg-gradient-to-br from-white to-slate-100 border-slate-200"
@@ -144,7 +144,7 @@ export default function JoinBetaSection() {
                 <motion.button
                   className="text-white px-6 py-3  font-semibold shadow-md transition-all bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"
                    whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setIsModalOpen(true)}
                 >
                   Apply for Beta Access
