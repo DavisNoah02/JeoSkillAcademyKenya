@@ -133,24 +133,7 @@ Protect the LMS landing page and forms from bots and abuse by requiring users to
 - Create a backend API endpoint (`/api/verify-recaptcha`) to validate tokens.
 - Store secret keys securely in environment variables.
 
-**Example Flow:**
-```mermaid
-sequenceDiagram
-  participant User
-  participant React SPA
-  participant Next.js API
-  participant Google reCAPTCHA
 
-  User->>React SPA: Loads landing page
-  React SPA->>User: Shows reCAPTCHA modal
-  User->>Google reCAPTCHA: Completes challenge
-  Google reCAPTCHA->>React SPA: Returns token
-  React SPA->>Next.js API: Sends token for verification
-  Next.js API->>Google reCAPTCHA: Verifies token (secret key)
-  Google reCAPTCHA->>Next.js API: Returns verification result
-  Next.js API->>React SPA: Returns success/failure
-  React SPA->>User: Grants/denies access
-```
 
 **Example Diagram:**
 > _Sequence flow of the Google reCAPTCHA ._

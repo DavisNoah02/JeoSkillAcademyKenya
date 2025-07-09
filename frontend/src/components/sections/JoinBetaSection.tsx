@@ -162,7 +162,6 @@ export default function JoinBetaSection() {
 </motion.div>
 
 
-
       </div>
       <BetaAccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>

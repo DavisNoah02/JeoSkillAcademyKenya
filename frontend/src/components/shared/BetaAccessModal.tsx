@@ -319,10 +319,11 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">Join Our Beta Program</h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-6">Get exclusive early access to cutting-edge learning experiences.</p>
         {success ? (
+          
           <div className="text-center py-8">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
             <p className="text-lg font-semibold text-gray-900 dark:text-white">Thank you for your interest!</p>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">We've received your application. We'll be in touch soon with updates regarding your access to the Everse Academy Beta Program.</p>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">We've received your application. We'll be in touch soon with updates regarding your access to the Jeo Skill Academy Beta Program.</p>
             <button
               onClick={onClose}
               className="mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300"
