@@ -1,26 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Define the shape of your request body for type safety
-interface FormData {
-  name: string;
-  email: string;
-  // Add other form fields as needed
-}
-
-// Define the shape of your response data
 interface SubmissionResult {
   success: boolean;
   message?: string;
-  // Add other response fields as needed
 }
 
-// Add type definition for process.env if you use any env vars here
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      FRONTEND_URL: string; // Used for CORS
-      SENDGRID_API_KEY: string; // If you plan to send emails here
-      SENDGRID_FROM_EMAIL: string; // If you plan to send emails from here
+      FRONTEND_URL: string;
+      NEXT_PUBLIC_FORMSPREE_URL: string;
     }
   }
 }
@@ -29,48 +18,85 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SubmissionResult>
 ) {
-  // 1. CORS Headers - Allow frontend to access this API
+  // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_URL || '*'); // Use your frontend URL
+  res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_URL || '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader(
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
 
-  // Handle preflight request for CORS
+  // CORS preflight
   if (req.method === 'OPTIONS') {
-    res.status(200).end(); // Respond with 200 OK for preflight
-    return;
+    return res.status(200).end();
   }
 
-  // Only allow POST requests for form submission
+  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Method Not Allowed' });
   }
 
-  // Get data from request body
-  const { name, email /* ... other form fields */ } = req.body as FormData;
-
-  // --- Implement your form submission logic here ---
-  // Examples:
-  // - Save to database
-  // - Send an email (using SendGrid, etc.)
-  // - Integrate with another service (e.g., Mailchimp)
-
   try {
-    // Example: Basic logging
-    console.log('Received form submission:', { name, email });
+    const {
+      name,
+      email,
+      phone,
+      location,
+      interest,
+      github,
+      consent
+    } = req.body as {
+      name: string;
+      email: string;
+      phone?: string;
+      location?: string;
+      interest: string;
+      github?: string;
+      consent?: string;
+    };
 
-    // Example: You might want to call another service/function here,
-    // e.g., if you have a separate service for sending welcome emails.
-    // Make sure to handle any errors from those services.
+    // Validate required fields
+    if (!name || !email || !interest) {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required fields: name, email, or interest.'
+      });
+    }
 
-    // If everything is successful
-    return res.status(200).json({ success: true, message: 'Form submitted successfully!' });
+    const FORMSPREE_URL = process.env.NEXT_PUBLIC_FORMSPREE_URL;
 
+    const formspreeResponse = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fullName: name,
+        email,
+        phone,
+        location,
+        learningInterest: interest,
+        githubProfile: github,
+        consent
+      })
+    });
+
+    if (!formspreeResponse.ok) {
+      const errorText = await formspreeResponse.text();
+      console.error('Formspree submission failed:', errorText);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to submit form. Please try again later.'
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: 'Form submitted successfully!'
+    });
   } catch (error) {
-    console.error('Error submitting form:', error);
+    console.error('Unexpected error:', error);
     return res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
-} 
+}
