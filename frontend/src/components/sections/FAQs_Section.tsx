@@ -132,7 +132,7 @@ export default function FAQsSection() {
             onSubmit={handleSubscribe}
             className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full"
           >
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-sm">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -166,7 +166,7 @@ export default function FAQsSection() {
                 ? "Subscribing..."
                 : isSubscribed
                 ? "Subscribed "
-                : "Subscribe"}
+                : "Join Now"}
             </motion.button>
           </form>
 

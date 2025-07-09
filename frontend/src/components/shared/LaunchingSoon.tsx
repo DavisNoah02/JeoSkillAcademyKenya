@@ -14,7 +14,7 @@ export default function LaunchingSoon() {
       >
         {/* Outer pulse ring */}
         <motion.div
-          className="absolute inset-0 rounded-full border border-red-500"
+          className="absolute inset-0 rounded-full border border-red-300"
           animate={{
             scale: [1, 1.15, 1],
             

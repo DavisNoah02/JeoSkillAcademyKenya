@@ -38,57 +38,44 @@ export default function AboutUs() {
     <>
     <Navbar/>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pt-16">
+
+      
         {/* Hero Section */}
         <motion.section
-          className="relative overflow-hidden py-18 px-6"
+          className="relative overflow-hidden py-30 px-6 min-h-[80vh] flex items-center justify-center text-center" 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-emerald-600/10 dark:from-blue-400/5 dark:to-emerald-400/5" />
-          <div className="container mx-auto max-w-6xl relative z-10">
-            <motion.div className="text-center mb-16" variants={fadeInUp} initial="initial" animate="animate">
-              
-              <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent mb-6">
-                Who are We ?
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Empowering Africa's next generation of digital innovators through world-class, accessible online education
-              </p>
-            </motion.div>
+          <div className="absolute inset-0 z-0">
+            <div
+              className="w-full h-full bg-cover bg-center lazyload"
+              style={{
+                // Use the uploaded image directly as the background
+                backgroundImage: `url('JeoStudents.jpg')`, 
+              }}
+            />
+            <div className="absolute inset-0 bg-gray-900/60" />
+          </div>
 
-            {/* Stats Grid */}
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-              variants={staggerContainer}
-              initial="initial"
-              animate="animate"
-            >
-              {[
-                { number: "100+", label: "Active Learners", icon: Users, color: "blue" },
-                { number: "20+", label: "Success Stories", icon: Globe, color: "green" },
-                { number: "10+", label: "Expert Instructors", icon: Award, color: "purple" },
-                { number: "80+", label: "Courses Available", icon: BookOpen, color: "orange" },
-              ].map((stat, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="text-center p-6 border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
-                    <CardContent className="p-0">
-                      <div
-                        className={`w-12 h-12 mx-auto mb-4 rounded-full bg-${stat.color}-100 dark:bg-${stat.color}-900/30 flex items-center justify-center`}
-                      >
-                        <stat.icon className={`w-6 h-6 text-${stat.color}-600 dark:text-${stat.color}-400`} />
-                      </div>
-                      <div className={`text-3xl font-bold text-${stat.color}-600 dark:text-${stat.color}-400 mb-2`}>
-                        {stat.number}
-                      </div>
-                      <div className="text-slate-600 dark:text-slate-300 font-medium">{stat.label}</div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+          
+          <div className="container mx-auto max-w-4xl relative z-10"> 
+            {/* Centered Text Block */}
+            <motion.div variants={fadeInUp} initial="initial" animate="animate">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"> 
+                Who we are?
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-5xl mx-auto text-center"> 
+             The Creation of JeoSkill Academy right here in Kenya, our story began with a deep conviction: that technology, when harnessed for good, can profoundly transform lives across our continent.
+              </p>
+              <p className="text-lg md:text-xl text-gray-200 mt-4 max-w-3xl mx-auto text-center">
+            Our goal is not just to teach; it's to empower a generation. By breaking down barriers to quality tech education, we are enabling young Kenyans, and eventually young Africans across the continent, to thrive in a competitive global economy, driving innovation, and contributing to the sustainable betterment of our societies.
+              </p>
             </motion.div>
           </div>
         </motion.section>
+
+
 
         <div className="container mx-auto px-6 max-w-6xl">
           {/* Mission & Vision */}
@@ -116,9 +103,8 @@ export default function AboutUs() {
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Our Mission</h3>
                     </div>
-                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed text">
-                      To democratize access to world-class tech and professional education by building an inclusive and
-                      engaging digital learning ecosystem tailored for African learners.
+                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed text-left">
+                      To democratize future-ready tech and professional education across Africa by implementing and evaluating AI-driven adaptive learning platforms that personalize instruction in core subjects for tertiary students, empowering them to overcome educational barriers and achieve proficiency, thereby contributing to national development and innovation
                     </p>
                   </CardContent>
                 </Card>
@@ -131,11 +117,10 @@ export default function AboutUs() {
                       <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center">
                         <Target className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Our Vision</h3>
+                      <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Our Belief</h3>
                     </div>
-                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed">
-                      To be Africa's most trusted edtech platform — empowering the next generation of developers,
-                      innovators, and digital leaders through future-ready education.
+                    <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed text-left">
+                      To be Africa's most trusted edtech platform — To lead in bridging educational disparities and fostering a globally competitive workforce in Africa through accessible, personalized, and technology-driven learning solutions.
                     </p>
                   </CardContent>
                 </Card>
@@ -155,7 +140,7 @@ export default function AboutUs() {
               <div>
                 <h2 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-6">Our Story</h2>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                  Founded by Noah Dave and his team, a team of Kenyan educators, developers, and community builders, JeoSkill Academy was born out of the
+                  Founded by <span className="font-semibold text-emerald-200">Lee Emmanuel</span>, <span className="font-semibold text-emerald-200">Noah Dave</span>, and their team, a team of Kenyan educators, developers, and community builders, JeoSkill Academy was born out of the
                   need to close Africa's digital skills gap. Our team is committed to delivering hands-on, locally
                   relevant, and globally recognized online education.
                 </p>
@@ -174,7 +159,7 @@ export default function AboutUs() {
                       <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">Innovation at Heart</h3>
                     </div>
                     <p className="text-slate-600 dark:text-slate-300">
-                      We continuously innovate our teaching methods, incorporating the latest technologies and pedagogical
+                      We continuously innovate our teaching methods, incorporating the latest technologies and  
                       approaches to ensure our students receive the best possible learning experience.
                     </p>
                   </CardContent>
@@ -246,6 +231,44 @@ export default function AboutUs() {
             </div>
           </motion.section>
 
+
+          {/* Our Team */}
+              {/* <motion.section
+                className="py-16"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <motion.div className="text-center mb-12" variants={fadeInUp}>
+                  <h2 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Meet the Team</h2>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                    The passionate minds behind JeoSkill Academy
+                  </p>
+                </motion.div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                  {[1, 2, 3].map((_, index) => (
+                    <motion.div key={index} variants={fadeInUp}>
+                      <Card className="p-6 border-0 shadow-lg bg-white dark:bg-slate-800 hover:shadow-xl transition-all duration-300 text-center">
+                        <CardContent className="p-0">
+                          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+                            <img
+                              src={`/${index + 1}.jpg`} // Upload and name your images as team1.jpg, team2.jpg, team3.jpg
+                              alt={`Team member ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-1">Name Placeholder</h3>
+                          <p className="text-sm text-slate-600 dark:text-slate-300">Role Placeholder</p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.section> */}
+
+
           {/* Testimonials */}
           <motion.section
             className="py-16"
@@ -272,7 +295,7 @@ export default function AboutUs() {
                 },
                 {
                   quote:
-                    "As a working mom, flexibility mattered. E-verse helped me upskill without quitting my job — and I got certified too!",
+                    "As a working mom, flexibility mattered. Jeo Skill helped me upskill without quitting my job — and I got certified too!",
                   author: "Lydia Chebet",
                   location: "Eldoret, Kenya",
                   role: "Full-Stack Developer",
