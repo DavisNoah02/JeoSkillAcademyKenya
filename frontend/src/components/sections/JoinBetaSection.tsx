@@ -117,51 +117,52 @@ export default function JoinBetaSection() {
         </div>
 
         {/* CTA */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className={`relative max-w-4xl mx-auto rounded-xl p-10 shadow-2xl overflow-hidden group transition-all duration-500 border ${
-            isDark
-              ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700"
-              : "bg-gradient-to-br from-white to-slate-100 border-slate-200"
-          }`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-indigo-500/5 group-hover:from-purple-500/10 group-hover:via-blue-500/10 group-hover:to-indigo-500/10 transition-all duration-700 pointer-events-none" />
-            <div className="relative z-10">
-              <div className="flex items-center justify-center space-x-2 mb-4">
-                <Users className="w-6 h-6 text-purple-400" />
-                <span className={`text-sm ${isDark ? "text-purple-300" : "text-purple-600"}`}>Join Other Beta Applicants</span>
-              </div>
-              <h3 className={`text-2xl font-bold mb-4 ${isDark ? "text-white" : "text-slate-800"}`}>Ready to Get Started?</h3>
-              <p className={`text-sm max-w-xl mx-auto mb-6 ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                Join other learners who are already preparing for the future of work in Kenya.
-                Apply now and become part of Kenya's tech revolution.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  className="text-white px-6 py-3  font-semibold shadow-md transition-all bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"
-                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Apply for Beta Access
-                </motion.button>
+<motion.div
+  className="text-center mt-12"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.6 }}
+  viewport={{ once: true }}
+>
+  <div className="flex items-center justify-center space-x-2 mb-3">
+    <Users className="w-6 h-6 text-purple-500" />
+    <span className={`text-sm font-medium ${isDark ? "text-purple-300" : "text-purple-600"}`}>
+      Join Other Beta Applicants
+    </span>
+  </div>
 
-                <motion.button
-                  className="px-6 py-3  font-semibold transition-all border border-slate-400 bg-gray-600 text-white hover:bg-slate-700"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate("/AboutUs")}
-                >
-                  Learn More
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+  <h3 className={`text-3xl font-bold mb-4 ${isDark ? "text-white" : "text-slate-800"}`}>
+    Ready to Get Started?
+  </h3>
+
+  <p className={`text-base max-w-2xl mx-auto mb-6 ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+    Join other learners who are already preparing for the future of work in Kenya.
+    Apply now and become part of Kenya's tech revolution.
+  </p>
+
+  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <motion.button
+      className="text-white px-6 py-3 font-semibold  shadow-md transition-all bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => setIsModalOpen(true)}
+    >
+      Apply for Beta Access
+    </motion.button>
+
+    <motion.button
+      className="px-6 py-3 font-semibold  transition-all border border-slate-400 bg-gray-600 text-white hover:bg-slate-700"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => navigate("/AboutUs")}
+    >
+      Learn More
+    </motion.button>
+  </div>
+</motion.div>
+
+
+
       </div>
       <BetaAccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>

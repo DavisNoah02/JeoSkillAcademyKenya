@@ -66,9 +66,10 @@ const Footer = () => {
       >
         {/* Company Info */}
         <div className="space-y-4">
-          <h2 className="text-2xl text-left font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">
-             JEO SKILL Kenya
-          </h2>
+            <h2 className="text-2xl text-left font-bold tracking-tight mb-2">
+              <span className="text-2xl text-left font-bold font-extrabold tracking-tight bg-gradient-to-r from-red-400 to-cyan-600 bg-clip-text text-transparent">Jeo Skill</span>
+              <span className="text-gray-300 ml-2">Kenya</span>
+            </h2>
           <p className="text-left text-md gap-3 text-slate-300">
             Bridging the gap in digital skills through world-class training for future-ready Kenyans.
           </p>

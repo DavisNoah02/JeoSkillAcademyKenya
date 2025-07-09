@@ -4,57 +4,46 @@ import { ThemeProvider } from "@/components/themeProvider";
 import { Theme as RadixTheme } from "@radix-ui/themes";
 import { Analytics } from "@vercel/analytics/react";
 import routes from "./routes/routes";
-import ScrollToTop from "@/components/ScrollToTop"; 
+import ScrollToTop from "@/components/ScrollToTop";
+import { ModeToggle } from "./components/mode-toggle";
+import LoaderWrapper from "./components/LoaderWrapper"; // ✅ Loader component
 import "./App.css";
 import "@radix-ui/themes/styles.css";
-import  { ModeToggle } from "./components/mode-toggle"; 
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RadixTheme>
         <Router>
-          <ScrollToTop /> {/* scroll resets on route change */}
-          <Suspense
-            fallback={
-              <div className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-emerald-50 to-white dark:from-slate-900 dark:via-blue-950 dark:to-emerald-950 z-50">
-                {/* Spinner */}
-                <div className="mb-6">
-                  <svg className="animate-spin h-12 w-12 text-emerald-500" viewBox="0 0 24 24">
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                      fill="none"
-                    />
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                    />
-                  </svg>
+          <ScrollToTop />
+          <LoaderWrapper>
+            <Suspense
+              fallback={
+                <div className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-emerald-50 to-white dark:from-gray-900 dark:via-blue-950 dark:to-emerald-950 z-50">
+                  <div className="relative w-20 h-20 mb-8">
+                    <div className="absolute inset-0 rounded-full border-[6px] border-dashed border-emerald-500 animate-spin"></div>
+                    <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-emerald-400 to-blue-500 dark:from-emerald-600 dark:to-blue-800 blur-sm opacity-80"></div>
+                  </div>
+                      <h1 className="text-3xl sm:text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 text-center animate-pulse">
+                          Welcome to <span className="text-blue-600 dark:text-blue-400">JEO Skill Academy</span>
+                        </h1>
+
+                        {/* Subtitle */}
+                        <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 text-center">
+                          Setting up your learning Environment...
+                        </p>
                 </div>
-                <div className="text-lg font-semibold text-slate-700 dark:text-slate-200 tracking-wide">
-                  Loading JEO Skill Academy...
-                </div>
-                <div className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                  Preparing your learning experience
-                </div>
-              </div>
-            }
-          >
-            <Routes>
-              {routes.map(({ path, element }, index) => (
-                <Route key={index} path={path} element={element} />
-              ))}
-            </Routes>
-          </Suspense>
+              }
+            >
+              <Routes>
+                {routes.map(({ path, element }, index) => (
+                  <Route key={index} path={path} element={element} />
+                ))}
+              </Routes>
+            </Suspense>
+          </LoaderWrapper>
           <Analytics />
-          {/* Mode toggle fixed at bottom right */}
-          <div className="fixed bottom-6 right-6 z-50">
+          <div className="fixed bottom-6 left-4 z-40">
             <ModeToggle />
           </div>
         </Router>
@@ -64,4 +53,3 @@ function App() {
 }
 
 export default App;
-// This is the main entry point for the React application.

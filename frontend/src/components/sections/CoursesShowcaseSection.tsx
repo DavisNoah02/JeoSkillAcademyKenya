@@ -6,6 +6,7 @@ import {
   Crown,
   ChevronRight,
   Clock,
+  ArrowRight,
   Award,
 } from "lucide-react"
 import { useTheme } from "@/components/themeProvider"
@@ -182,12 +183,30 @@ export default function CoursesSection() {
                 Join thousands of students who will transform their careers with our comprehensive courses. Start with free courses or dive deep with premium content.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-12">
-                <motion.button className="text-white px-6 py-4  font-semibold shadow-md hover:shadow-lg transition-all duration-500 border border-transparent bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-green-700 hover:to-emerald-800 hover:cursor-pointer" whileHover={{ scale: 1.03, y: 0.3 }} whileTap={{ scale: 0.55 }} onClick={() => setIsModalOpen(true)}>
-                  Start with Free Courses
-                </motion.button>
-                <motion.button className="text-white px-8 py-4  font-semibold shadow-md hover:shadow-lg transition-all duration-500 border border-transparent bg-gradient-to-r from-blue-900 to-emerald-900 hover:from-blue-700 hover:to-emerald-800 hover:cursor-pointer" whileHover={{ scale: 1.03, y: 0.3 }} whileTap={{ scale: 0.55 }} onClick={() => navigate("/more-courses")}>
-                  Explore More Courses
-                </motion.button>
+                <div className="flex justify-center items-center mt-8 gap-15">
+                            {/* CTA Buttons */}
+                      <motion.span
+                        className="inline-flex items-center gap-2 font-semibold text-lg text-green-600 dark:text-green-400 hover:text-cyan-600 dark:hover:text-cyan-400 cursor-pointer transition-colors duration-300"
+                        whileHover={{ scale: 1.03, y: 0.3 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setIsModalOpen(true)}
+                      >
+                        Free Courses
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.span>
+
+                      <motion.span
+                        className="inline-flex items-center gap-2 font-semibold text-lg text-red-600 dark:text-red-400 hover:text-cyan-600 dark:hover:text-cyan-400 cursor-pointer transition-colors duration-300"
+                        whileHover={{ scale: 1.03, y: 0.3 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate("/more-courses")}
+                      >
+                        Explore More Courses
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.span>
+                    </div>
+
+
                 <MoreCoursesModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
               </div>
             </div>

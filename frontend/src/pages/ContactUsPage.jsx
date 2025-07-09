@@ -105,7 +105,7 @@ const ContactUsPage = () => {
   if (submitted) {
     return (
    
-      <div className="min-h-screen bg-gradient-to-br from-blue-900/30 to-emerald-900/30 backdrop-blur-sm py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-900/30 to-emerald-900/30 backdrop-blur-sm  py-12 px-4">
         <div className="max-w-2xl mx-auto">
           <Card className="text-center">
             <CardContent className="pt-6">
@@ -129,7 +129,7 @@ const ContactUsPage = () => {
   return (
     <> 
     <Navbar/>
-    <div className="min-h-screen bg-white dark:bg-gray-900 py-18 px-4">
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-20 mt-6 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold   mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent bg-clip-text text-transparent pt-10">Get in Touch</h1>

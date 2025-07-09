@@ -2,7 +2,7 @@ export const faqs = [
 	{
 		question: "What is Jeo Skill Academy?",
 		answer:
-			"Our Jeo Skill Academy Kenya platform is designed from the ground up to help you learn faster and smarter. Expect features like gamified progress tracking, AI-powered learning suggestions, peer collaboration tools, and offline access. It’s more than just video lessons—it's an ecosystem built to elevate your skills.",
+			"Our Jeo Skill Academy Kenyan platform is designed from the ground up to help you learn faster and smarter. Expect features like gamified progress tracking, AI-powered learning suggestions, peer collaboration tools, and offline access. It’s more than just video lessons—it's an ecosystem built to elevate your skills.",
 	},
 	{
 		question: "How much will courses cost?",

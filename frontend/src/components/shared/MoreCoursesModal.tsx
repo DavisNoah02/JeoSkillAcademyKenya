@@ -25,7 +25,7 @@ const MoreCoursesModal: React.FC<MoreCoursesModalProps> = ({ isOpen, onClose }) 
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 dark:from-blue-900 dark:via-slate-900 dark:to-slate-800 transition-colors duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-blue-50 to-emerald-50 border-emerald-300 shadow-sm dark:from-blue-900 dark:via-slate-900 dark:to-slate-800 transition-colors duration-300"
           variants={backdrop}
           initial="hidden"
           animate="visible"
@@ -39,7 +39,7 @@ const MoreCoursesModal: React.FC<MoreCoursesModalProps> = ({ isOpen, onClose }) 
             exit="hidden"
           >
             <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
-              🚧 Courses Coming Soon!
+              🚧 Free Courses Coming Soon!
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               Free learning materials and tutorials are being crafted with care. Stay tuned for exclusive early access!
