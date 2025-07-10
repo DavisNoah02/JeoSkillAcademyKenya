@@ -33,7 +33,7 @@ export default function LoaderWrapper({ children }) {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 text-center animate-pulse">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-emerald-700 dark:text-emerald-400 text-center animate-pulse">
           Welcome to <span className="text-blue-600 dark:text-blue-400">JEO Skill Academy</span>
         </h1>
 
