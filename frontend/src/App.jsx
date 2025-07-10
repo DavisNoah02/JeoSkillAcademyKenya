@@ -10,6 +10,7 @@ import RecaptchaModal from "./components/RecaptchaModal";
 import LoaderWrapper from "./components/LoaderWrapper"; // ✅ Loader component
 import "./App.css";
 import "@radix-ui/themes/styles.css";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -83,7 +84,8 @@ function App() {
             </Suspense>
           </LoaderWrapper>
           <Analytics />
-          <div className="fixed bottom-6 left-4 z-40">
+          <ScrollToTopButton />
+          <div className="fixed bottom-4 right-5 z-50">
             <ModeToggle />
           </div>
         </Router>

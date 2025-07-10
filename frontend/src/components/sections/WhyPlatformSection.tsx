@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/components/themeProvider";
 import { problems, learningPath } from "@/data/whyJeoSkillData";
+import { Link } from "react-router-dom";
 
 const successMetrics = [
   { label: "Structured Curriculum", icon: BookOpen },
@@ -271,8 +272,8 @@ export default function WhySkillKenya() {
         </motion.div>
 
         <div className="mt-8 text-center">
-          <a
-            href="/contactUs"
+          <Link
+            to="/contactUs"
             className={`inline-block px-6 py-3 font-semibold transition-colors duration-300 ${
               theme === "dark"
                 ? "bg-emerald-500 hover:bg-emerald-600 text-slate-900"
@@ -280,7 +281,7 @@ export default function WhySkillKenya() {
             }`}
           >
             Talk to Us to Learn More&rarr;
-          </a>
+          </Link>
         </div>
       </div>
     </section>

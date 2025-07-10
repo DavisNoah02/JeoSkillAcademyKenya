@@ -7,9 +7,9 @@ import NotificationBanner from "./NotificationBanner";
 
 const navLinks = [
   { name: "Home", to: "/" },
-  { name: "About Us", to: "/AboutUs" },
+  { name: "About Us", to: "/aboutus" },
   { name: "Courses", to: "/more-courses" },
-  { name: "Contact", to: "/ContactUs" },
+  { name: "Contact", to: "/contactus" },
 ];
 
 const Navbar: React.FC = () => {
@@ -18,7 +18,15 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const { theme } = useTheme();
 
-  const isActive = (path: string) => location.pathname === path;
+  // Case-insensitive partial match (handles routes like /aboutus/team etc)
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.toLowerCase().startsWith(path.toLowerCase());
+  };
+  
+
   const offsetTop = bannerDismissed ? "top-0" : "top-[2.5rem]";
 
   return (
@@ -55,6 +63,7 @@ const Navbar: React.FC = () => {
                       ? "text-teal-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-teal-300"
                       : "hover:text-teal-300 hover:after:content-[''] hover:after:absolute hover:after:left-0 hover:after:-bottom-1 hover:after:w-full hover:after:h-[2px] hover:after:bg-teal-300"
                   }`}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
@@ -70,7 +79,6 @@ const Navbar: React.FC = () => {
               >
                 JEO ACADEMY
               </Link>
-
             </li>
           </ul>
 

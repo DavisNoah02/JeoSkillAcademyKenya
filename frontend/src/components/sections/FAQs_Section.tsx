@@ -148,11 +148,10 @@ export default function FAQsSection() {
               )}
             </div>
             <motion.button
-               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+               
               type="submit"
               disabled={isLoading || isSubscribed || isVerifying}
-              className={`bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-9 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25 transition-all duration-500 border border-purple-400/20 ${
+              className={`bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:to-teal-400 transition text-white px-9 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25   border border-purple-400/20 ${
                 isSubscribed
                   ? "bg-green-600 cursor-default"
                   : isLoading || isVerifying

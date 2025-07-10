@@ -160,7 +160,7 @@ Here is the typical flow for the beta application submission:
 
 ```mermaid
 sequenceDiagram
-    participant User
+  participant User
     participant Frontend (React App)
     participant Backend (Next.js API)
     participant External Services
