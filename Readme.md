@@ -1,56 +1,54 @@
-# JEO Skill Academy Kenya LMS – Fullstack Documentation
+# Jeo Skill Academy - Landing Page & API
 
-Jeo Skill Academy Kenya is a modern Learning Management System (LMS) designed to empower learners across Africa with accessible, high-quality online education. This project is a fullstack SPA application with a React + Vite frontend and a Next.js backend.
+Welcome to the official repository for the Jeo Skill Academy landing page. This project is a modern, full-stack Single Page Application (SPA) designed to serve as the public-facing entry point for our learning platform. It is built with a React + Vite frontend and a Next.js backend for API services.
 
 ---
 
-## �� Project Overview
+## 🚀 Project Overview
 
-This repository contains the code for the JeoSkill company landing page, built as a Single Page Application (SPA) using React and Vite. The landing page provides information about JeoSkill, its mission, and offerings.
+This repository contains the complete codebase for the Jeo Skill Academy landing page. Its primary purpose is to provide a fast, engaging, and informative experience for prospective students, showcasing our courses, mission, and unique features.
 
-> **Important:** The "JEO ACADEMY" button in the navigation redirects users to the JeoSkill Learning Management System (LMS), which is a separate application maintained in a different repository. This repository does **not** include the LMS codebase—only the landing page and its related features.
+> **Important:** This repository **only** contains the SPA landing page and its associated backend services. The Actual Comnplete Learning Management System (LMS) is a separate application.
 
-- **Purpose:** Deliver a robust, scalable, and user-friendly landing page for JeoSkill, serving as the public entry point for learners, educators, and organizations.
-- **Features:**  
-  - Project-based courses  
-  - Mobile-first and offline-ready  
-  - Community and mentorship  
-  - Secure authentication and user management
+### Core Goals
+- **Inform & Engage:** Present key information about E-Verse Academy in a clear and compelling way.
+- **Capture Leads:** Collect applications from interested students through a secure and user-friendly form.
+- **High Performance:** Deliver a fast, responsive, and mobile-first user experience.
 
-  - **Features to Add:**  
-    - Gamified progress tracking  
-    - AI-powered learning suggestions 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-### Frontend
-- **Framework:** React (with Vite)
-- **Routing:** React Router
-- **Styling:** Tailwind CSS, custom CSS, framer-motion
-- **UI Components:** Custom, inspired by shadcn/ui, Radix UI
-- **Icons:** Lucide React
-- **State Management:** React hooks, context
-- **Utilities:** class-variance-authority, cn utility
-- **Testing:** (Add your testing framework here if used)
-- **Linting:** ESLint
-- **Type Checking:** TypeScript support
+The project is built with a modern, decoupled architecture, leveraging the following technologies:
 
-### Backend
-- **Framework:** Next.js (API routes)
-- **Email:** SendGrid (for transactional emails)
-- **Email Verification:** Hunter.io API
-- **Security:** CORS, environment variable management
-- **Type Checking:** TypeScript
+### Frontend (React + Vite)
+| Category          | Technology / Library                                       | Purpose                                           |
+| ----------------- | ---------------------------------------------------------- | ------------------------------------------------- |
+| **Core**          | `React`, `Vite`, `TypeScript`                              | Building a fast, modern, and type-safe UI.        |
+| **Routing**       | `React Router`                                             | Client-side navigation and page routing.          |
+| **Styling**       | `Tailwind CSS`, `Framer Motion`                            | Utility-first styling and fluid animations.       |
+| **UI Components** | `Radix UI`, `Lucide React`                                 | Accessible, unstyled primitives and icon sets.    |
+| **Forms**         | `React Hook Form`                                          | Performant and flexible form management.          |
+| **Analytics**     | `@vercel/analytics`                                        | Tracking user engagement and site performance.    |
+
+### Backend (Next.js API)
+| Category               | Technology / Service                                       | Purpose                                           |
+| ---------------------- | ---------------------------------------------------------- | ------------------------------------------------- |
+| **Framework**          | `Next.js (API Routes)`                                     | Creating serverless functions for backend logic.  |
+| **Email Services**     | `SendGrid`                                                 | (Future Use) Sending transactional emails.        |
+| **Email Verification** | `Hunter.io`                                                | Real-time email validation to reduce invalid sign-ups. |
+| **Security**           | `Google reCAPTCHA`                                         | Protecting forms from spam and automated abuse.   |
 
 ---
 
 ## 📁 Project Structure
 
+The repository is organized into two main directories: `frontend` and `backend`.
+
 ```
 root/
 ├── frontend/
-│   ├── public/           # Static assets
+│   ├── public/           # Static assets (images, favicon)
 │   ├── src/
 │   │   ├── assets/       # Logos, SVGs, etc.
 │   │   ├── components/   # UI, layout, shared, and section components
@@ -65,42 +63,16 @@ root/
 │   ├── package.json, vite.config.js, tsconfig.json, README.md
 ├── backend/
 │   ├── pages/
-│   │   ├── api/
-│   │   │   ├── submit-application.ts   # Form submission endpoint
-│   │   │   ├── verify-email.ts         # Email verification endpoint
-│   ├── lib/            # Shared backend logic (types, utils)
-│   ├── package.json, next.config.js, tsconfig.json
+│   │   ├── api/          # Serverless API endpoints
+│   │   │   ├── submit-application.ts
+│   │   │   ├── verify-email.ts
+│   │   │   └── verify-recaptcha.ts
+│   ├── lib/              # Shared backend types and utilities
+│   └── package.json
+└── Readme.md
 ```
 
 ---
-
-## 🧑‍💻 Getting Started
-
-### Prerequisites
-
-- Node.js (v18+ recommended)
-- npm or yarn
-
-### Installation
-
-#### Frontend
-```sh
-cd frontend
-npm install
-npm run dev
-# Visit http://localhost:5173
-```
-
-#### Backend
-```sh
-cd backend
-npm install
-npm run dev
-# Visit http://localhost:3000 (API endpoints)
-```
-
----
-
 ## 🌍 Main Features
 
 - **Responsive Design:** Works on all devices.
@@ -113,73 +85,128 @@ npm run dev
 
 ---
 
-## 🔒 Security Features
+## 🧑‍💻 Getting Started
 
-### 1. reCAPTCHA Integration (Planned)
+Follow these instructions to set up and run the project locally.
 
-**Purpose:**  
-Protect the LMS landing page and forms from bots and abuse by requiring users to complete a reCAPTCHA challenge.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (or yarn/pnpm)
 
-**How it works:**
-- On page load or sensitive actions, a reCAPTCHA widget/modal is shown.
-- User completes the challenge, receiving a token.
-- The token is sent to the backend for verification.
-- Backend validates the token with Google’s reCAPTCHA API.
-- Only verified users can proceed.
+### 1. Clone the Repository
+```sh
+git clone https://github.com/your-username/everse-academy.git
+cd everse-academy
+```
 
-**Implementation Plan:**
-- Use [react-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha) for the frontend.
-- Add a modal or overlay on the landing page for verification.
-- Create a backend API endpoint (`/api/verify-recaptcha`) to validate tokens.
-- Store secret keys securely in environment variables.
+### 2. Set Up Environment Variables
 
+You will need to create `.env` files for both the `frontend` and `backend` directories.
 
+**Backend (`backend/.env`):**
+```env
+# Your secret key from Google reCAPTCHA admin panel
+RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
 
-**Example Diagram:**
-> _Sequence flow of the Google reCAPTCHA ._
+# Your API key from Hunter.io
+HUNTER_API_KEY=your_hunter_api_key
 
-![alt text](frontend/public/recaptcha-sequence.png)
+# The URL of your frontend application for CORS
+FRONTEND_URL=http://localhost:5173
 
-### 2. CORS and API Security
+# Your form endpoint from Formspree
+NEXT_PUBLIC_FORMSPREE_URL=https://formspree.io/f/your_form_id
+```
 
-- All backend endpoints set strict CORS headers, only allowing requests from the configured frontend URL.
-- Only POST requests are allowed for sensitive endpoints.
-- Environment variables are used for all secrets (API keys, etc.).
+**Frontend (`frontend/.env`):**
+```env
+# The public site key from Google reCAPTCHA admin panel
+VITE_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
 
-### 3. Email Verification
+# The URL of your backend API
+VITE_API_BASE_URL=http://localhost:3000/api
+```
 
-- Uses Hunter.io API to verify email addresses on registration or contact forms.
-- Prevents disposable, gibberish, or invalid emails from being used.
+### 3. Install Dependencies and Run
+
+**Run the Frontend:**
+```sh
+cd frontend
+npm install
+npm run dev
+# Your frontend will be available at http://localhost:5173
+```
+
+**Run the Backend:**
+```sh
+# In a new terminal window
+cd backend
+npm install
+npm run dev
+# Your backend API will be available at http://localhost:3000
+```
 
 ---
 
-## 📄 Main Pages & API Endpoints
+## 🔄 Frontend and Backend Interaction
 
-### Frontend Pages
+The frontend application communicates with the backend API to handle tasks that require server-side logic or secure key management.
 
-- `/` — Home (Hero, Beta, Why Us, Courses, FAQs)
-- `/AboutUs` — About E-verse Academy Kenya
-- `/ContactUs` — Contact form and info
-- `/PrivacyPolicy` — Privacy policy
-- `/TermsOfService` — Terms of service
-- `/CookiesPolicy` — Cookies policy
-- `*` — 404 Not Found
+Here is the typical flow for the recaptcha-sequence :
 
-### Backend API Endpoints
+![Architecture Diagram](frontend/public/recaptcha-sequence.png)
 
-- `POST /api/submit-application` — Handles form submissions.
-- `POST /api/verify-email` — Verifies email addresses using Hunter.io.
-- `POST /api/verify-recaptcha` — (Planned) Verifies reCAPTCHA tokens.
+Here is the typical flow for the beta application submission:
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend (React App)
+    participant Backend (Next.js API)
+    participant External Services
+
+    User->>Frontend: Fills out the beta application form
+    Frontend->>Backend: POST /api/verify-email with user's email
+    Backend->>External Services: Verifies email with Hunter.io
+    External Services-->>Backend: Returns validation result
+    Backend-->>Frontend: Sends back email validity status
+
+    User->>Frontend: Clicks "Submit"
+    Frontend->>Backend: POST /api/submit-application with form data
+    Backend->>External Services: Forwards data to Formspree
+    External Services-->>Backend: Confirms submission
+    Backend-->>Frontend: Returns success message
+    Frontend->>User: Displays "Application Submitted!" message
+```
+
+### Security Measures
+- **reCAPTCHA:** The entire site is protected by Google reCAPTCHA v3. Before the main application loads, a token is verified via the `/api/verify-recaptcha` endpoint to ensure the user is human.
+- **CORS:** The backend API is configured with strict Cross-Origin Resource Sharing (CORS) policies, only allowing requests from the specified `FRONTEND_URL`.
+- **Secret Management:** All API keys and sensitive credentials are stored securely in environment variables on the backend and are never exposed to the client.
+
+---
+
+## 📄 API Endpoints
+
+All endpoints are located in the `backend/pages/api/` directory.
+
+| Method | Endpoint                  | Description                                                              |
+| :----- | :------------------------ | :----------------------------------------------------------------------- |
+| `POST` | `/submit-application`     | Submits the beta application form data to Formspree.                     |
+| `POST` | `/verify-email`           | Validates a user's email address using the Hunter.io API.                |
+| `POST` | `/verify-recaptcha`       | Verifies a Google reCAPTCHA token to prevent bot access.                 |
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a Pull Request
+We welcome contributions! Please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new feature branch (`git checkout -b feature/your-amazing-feature`).
+3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+4.  Push to the branch (`git push origin feature/your-amazing-feature`).
+5.  Open a Pull Request.
 
 ---
 
@@ -193,14 +220,8 @@ Protect the LMS landing page and forms from bots and abuse by requiring users to
 
 ## 📝 License
 
-This project is licensed under the MIT License.
-
----
-
-
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 > _Empowering Africa’s next generation of digital innovators through world-class, accessible online education._
-
-
