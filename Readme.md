@@ -162,26 +162,8 @@ Here is the typical flow for the recaptcha-sequence :
 
 Here is the typical flow for the beta application submission:
 
-```mermaid
-sequenceDiagram
-  participant User
-    participant Frontend (React App)
-    participant Backend (Next.js API)
-    participant External Services
+![Architecture Diagram](frontend/public/Beta%20Application%20Form.png)
 
-    User->>Frontend: Fills out the beta application form
-    Frontend->>Backend: POST /api/verify-email with user's email
-    Backend->>External Services: Verifies email with Hunter.io
-    External Services-->>Backend: Returns validation result
-    Backend-->>Frontend: Sends back email validity status
-
-    User->>Frontend: Clicks "Submit"
-    Frontend->>Backend: POST /api/submit-application with form data
-    Backend->>External Services: Forwards data to Formspree
-    External Services-->>Backend: Confirms submission
-    Backend-->>Frontend: Returns success message
-    Frontend->>User: Displays "Application Submitted!" message
-```
 
 ### Security Measures
 - **reCAPTCHA:** The entire site is protected by Google reCAPTCHA v3. Before the main application loads, a token is verified via the `/api/verify-recaptcha` endpoint to ensure the user is human.
