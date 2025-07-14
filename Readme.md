@@ -12,7 +12,7 @@ Welcome to the official repository for the Jeo Skill Academy landing page. This 
 
 This repository contains the complete codebase for the Jeo Skill Academy landing page. Its primary purpose is to provide a fast, engaging, and informative experience for prospective students, showcasing our courses, mission, and unique features.
 
-> **Important:** This repository **only** contains the SPA landing page and its associated backend services. The Actual Comnplete Learning Management System (LMS) is a separate application.
+> **Important:** This repository **only** contains the SPA landing page and its associated backend services. The Actual Complete Learning Management System (LMS) is a separate application.
 
 ### Core Goals
 - **Inform & Engage:** Present key information about E-Verse Academy in a clear and compelling way.
