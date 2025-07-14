@@ -6,6 +6,8 @@
 
 Welcome to the official repository for the Jeo Skill Academy landing page. This project is a modern, full-stack Single Page Application (SPA) designed to serve as the public-facing entry point for our learning platform. It is built with a React + Vite frontend and a Next.js backend for API services.
 
+<img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/ecccd959-6112-4f5c-8344-9c03f75df915" />
+
 ---
 
 ## 🚀 Project Overview
