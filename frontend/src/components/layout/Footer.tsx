@@ -157,11 +157,11 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="w-5 h-5 hover:text-blue-400 transition" /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="w-5 h-5 hover:text-pink-400 transition" /></a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin className="w-5 h-5 hover:text-blue-300 transition" /></a>
-            <a href="https://github.com/noadave" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github className="w-5 h-5 hover:text-gray-100 transition" /></a>
+            <a href="https://github.com/DavisNoah02" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github className="w-5 h-5 hover:text-gray-100 transition" /></a>
           </div>
           <div>
             Built with <span className="text-pink-400">❤️</span> by{" "}
-            <a href="https://github.com/noadave" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">noa.dave</a>
+            <a href="https://noa-dave.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">noa.dave</a>
           </div>
         </div>
       </div>
