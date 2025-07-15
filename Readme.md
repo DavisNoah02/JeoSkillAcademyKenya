@@ -6,13 +6,15 @@
 
 Welcome to the official repository for the Jeo Skill Academy landing page. This project is a modern, full-stack Single Page Application (SPA) designed to serve as the public-facing entry point for our learning platform. It is built with a React + Vite frontend and a Next.js backend for API services.
 
+<img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/ecccd959-6112-4f5c-8344-9c03f75df915" />
+
 ---
 
 ## 🚀 Project Overview
 
 This repository contains the complete codebase for the Jeo Skill Academy landing page. Its primary purpose is to provide a fast, engaging, and informative experience for prospective students, showcasing our courses, mission, and unique features.
 
-> **Important:** This repository **only** contains the SPA landing page and its associated backend services. The Actual Comnplete Learning Management System (LMS) is a separate application.
+> **Important:** This repository **only** contains the SPA landing page and its associated backend services. The Actual Complete Learning Management System (LMS) is a separate application.
 
 ### Core Goals
 - **Inform & Engage:** Present key information about E-Verse Academy in a clear and compelling way.
