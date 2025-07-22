@@ -66,13 +66,13 @@ function App() {
                     <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-emerald-400 to-blue-500 dark:from-emerald-600 dark:to-blue-800 blur-sm opacity-80"></div>
                   </div>
                       <h1 className="text-3xl sm:text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 text-center animate-pulse">
-                          Welcome to <span className="text-blue-600 dark:text-blue-400">JEO Skill Academy</span>
+                           Ready...
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 text-center">
-                          Setting up your learning Environment...
-                        </p>
+                        {/* <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 text-center">
+                         Welcome back
+                        </p> */}
                 </div>
               }
             >

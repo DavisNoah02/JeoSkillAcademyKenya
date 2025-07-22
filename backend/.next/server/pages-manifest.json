@@ -1,5 +1,9 @@
 {
-  "/_app": "pages/_app.js",
+  "/api/submit-application": "pages/api/submit-application.js",
+  "/api/verify-email": "pages/api/verify-email.js",
+  "/api/verify-recaptcha": "pages/api/verify-recaptcha.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }

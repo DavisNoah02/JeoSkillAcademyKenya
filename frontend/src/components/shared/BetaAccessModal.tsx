@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { X, CheckCircle, AlertCircle, Loader } from "lucide-react";
 import { submitForm } from "@/services/formspree";
 import { verifyEmailHunter } from "@/services/hunter";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 interface BetaAccessModalProps {
   isOpen: boolean;
@@ -136,6 +138,18 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
     }
   };
 
+   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   // Effect to debounce email verification
   useEffect(() => {
     if (formData.email && touched.email) { // Only debounce if email has a value and has been touched
@@ -171,8 +185,6 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
         clearTimeout(debounceTimeoutRef.current);
       }
     }
-
-    // Cleanup function for the effect
     return () => {
       if (debounceTimeoutRef.current) {
         clearTimeout(debounceTimeoutRef.current);
@@ -180,9 +192,7 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
     };
   }, [formData.email, touched.email]); // Re-run effect when email changes or touched state changes
 
-  // Renamed from handleEmailBlur to handleEmailVerification for clarity
   const handleEmailVerification = async () => {
-    // This check is already done in useEffect, but good to keep as a safeguard
     if (!formData.email || !isValidEmailFormat(formData.email)) {
       setEmailVerified(false);
       setErrors(prev => ({
@@ -194,7 +204,7 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
     }
 
     setEmailVerifying(true);
-    setEmailVerified(false); // Reset verification status
+    setEmailVerified(false); // Reset verification 
     
     try {
       const verification = await verifyEmailHunter(formData.email);
@@ -307,6 +317,22 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
   if (!isOpen) return null;
 
   return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 10 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="bg-white dark:bg-gray-900 border border-green-600 rounded-lg p-6 w-full max-w-md shadow-lg relative max-h-[90vh] overflow-y-auto"
+          >
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm bg-opacity-50">
       <div className="bg-white border border-green-600 dark:bg-gray-900 rounded-lg p-6 w-full max-w-md shadow-lg relative max-h-[90vh] overflow-y-auto transform transition-all duration-300 ease-out">
         <button
@@ -316,7 +342,7 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
         >
           <X className="h-6 w-6" />
         </button>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">Join Our Beta Program</h2>
+        <h2 className="text-2xl font-bold text-gray-600 dark:text-white mb-2 text-center">Join Our Beta Program</h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-6">Get exclusive early access to cutting-edge learning experiences.</p>
         {success ? (
           
@@ -511,5 +537,9 @@ export default function BetaAccessModal({ isOpen, onClose }: BetaAccessModalProp
         )}
       </div>
     </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
