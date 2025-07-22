@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
+import "../../App.css"; 
 
 export default function LaunchingSoon() {
   return (
@@ -17,7 +18,6 @@ export default function LaunchingSoon() {
           className="absolute inset-0 rounded-full border border-red-300"
           animate={{
             scale: [1, 1.15, 1],
-            
           }}
           transition={{
             duration: 2,
@@ -26,15 +26,15 @@ export default function LaunchingSoon() {
           }}
         />
 
-        {/* Button */}
-        <div className="relative bg-gradient-to-r from-teal-800 via-gray-600 to-gray-800 border  rounded-full border-red-300/30 px-10 py-5 shadow-lg">
-          <div className="flex items-center space-x-4 text-white">
+        {/* Button with animated border */}
+        <div className="animated-border relative z-10 bg-gradient-to-r from-teal-800 via-gray-600 to-gray-800 border border-red-300/30 rounded-full px-10 py-5 shadow-lg overflow-hidden">
+          <div className="flex items-center space-x-4 text-white relative z-20">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
               }}
             >
               <Clock className="w-6 h-6 text-green-400" />
